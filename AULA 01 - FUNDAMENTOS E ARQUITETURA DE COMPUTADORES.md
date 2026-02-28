@@ -16,6 +16,6 @@
 
 ## O que é computação?
 
-    Um problema prático para iniciar:
+    Um problema prático para iniciar;
 
-![](/home/carlos/Imagens/Capturas%20de%20tela/Captura%20de%20tela%20de%202026-02-28%2018-09-13.png)
+Um mercado 
