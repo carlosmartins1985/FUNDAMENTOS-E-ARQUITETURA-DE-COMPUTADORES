@@ -1,61 +1,20 @@
 # Atividade Arquitetura de Von Neumann
 
-**Biografia do autor**
+## Extrutura geral
 
-    John von Neumann foi um matématico, engenheiro, físico e cientista da computação húgaro-americano de origem judaica, nascido no dia 28 de dezembro de 1903 em Budapeste.
+    De maneira geral, o modelo computacional proposto por Neumann se sustenta em cinco blocos principais.
 
-      Desenvolveu diversos conhecimentos relacionados à matemática, física e computação, moldando profundamente o mundo como vivemos. Dentre as suas principais contribuições estão: arquitetura von Neumann, programação linear, computação científica, entre outros.
+    Podemos citar cada bloco na ordem em que a informação/dados entram na máquina, são processados, e retornados ao usuário.
 
-    Em 1914 entrou no *Lutheran Fasori Evangélikus Gimnázium*, uma das principais instituições educacionais de Budapeste. Já em 1918, com quinze anos, começou a estudar cálculo avançado sob a tutoria de Gábor Szegő. Em 1923, prestou o exame de seleção para o prestigioso Instituto Federal de Tecnologia de Zurique (Eth Zurich), granduando-se em engenharia química aos 23 anos, em 1926.
+1. Dispositivos de entrada - São responsáveis por capturar dados do mundo externo e levá-los até o sistema. Esses dispositivos são capazes de converter sinais físicos como toques, som e luz em dados digitais que podem ser processados, e assim permitindo a interação entre usuário e sistema. Bons exemplos de dispositivos de entrada são teclados, mouses, sensores de presença, como os de porta automática ou os de biometria facial, telas de smartphones, que são dispositivos que funcionam com entrada e saída de dados ao mesmo tempo. Atualmente também se destacam como dispositivos de entrada sensores que fazem parte da Internet das Coisas (IoT), dentre eles, elementos que medem temperatura, detectam movimento e analisam a qualidade do ar, por exemplo.
 
-    Assim, enquanto participava do exame de seleção do Instituto Tecnológico de Zurique, von Neumann entrou na *Eötvös Loránd University*, como candidato a um ph.D. em matemática. Sobre sua tese, ele escolheu produzir a axiomatização da teoria de conjuntos de Cantor.
+2. Memórias;
+- Memória RAM - Memória de Acesso Aleatório, memória primária, volátil, de curta duração, que armazena tamporáriamente os programas em execução e dados em uso. Destacamos que, só armazena programas que estão em execução, se não estiver sendo executado, o programa não será colocado na memória RAM. Pois, para otimizar o sistema e evitar travamentos, ela carrega apenas os programas que estão sendo executados. É fato que quanto mais memória RAM no sistema, mais conseguimos otimizar a execução dos programas e manipular mais dados ao mesmo tempo, porém tratando de uma necessidade real, podemos não precisar de tanto assim. Um bom exemplo de se ter mais memória RAM seria para programas de edição de vídeos, onde exigimos muito do sistema, para ter-mos uma idéia, para se renderizar um vídeo por exemplo, usa-se quase que todos os núcleos do processador, e esvazia-se a memória RAM, isso para otimizar o sistema, pois o vídeo é dividido em várias partes, e distribuido entre os núcleos do processador, já para se programar, 4gb de RAM geralmente é mais que o necessário. Por isso é importante entender a necessidade do usuário antes de indicar mais ou menos memória afim de otimizar sistemas.
+* Memória ROM - Memória Somente Leitura. É nela que está armazenada a BIOS e o Firmware da máquina, que são responsáveis pelas instruções permanentes e essenciais para manutenção e inicialização do sistema. Geralmente é alimentada  por uma pequena pilha conectada na placa-mãe.
 
-    Em 1927, von Neumann começou a lecionar na Universidade de Berlin, como um *Privatdozent1*, sendo a pessoa mais nova já eleita com o título. Ao final de 1927, ele publicou 12 importantes artigos matemáticos, acumulando cerca de 32 artigos publicados até o fim de 1929. Em 1933, se tornou um professor no Instituto para Estudo Avançado (Institute for Advanced Study), em Nova Jersey, permanencendo lá até a sua morte no dia 8 de fevereiro de 1957.
+* Storages(HDs, SSDs) - Memória permanente, memória secundária. Aqui ficam armazenados os dados e programas instalados no computador, de forma permanente, como o sistema operacional, programas, como editores de texto, por exemplo e também imagens, vídeos e arquivos. É o nosso armazenamento interno. E aqui está uma das grandes inovações da arquitetura de von Neumann, pois com a criação desse armazenamento os programas passaram a ser armazenados no mesmo lugar onde estão os dados, tratando-se de um conceito muito mais inteligente, muito mais simples.
+3. UC - Unidade de Controle - Responsável por controlar todas as operações do sistema. Gerência qual intrução deve ser realizada a cada momento, e em qual ordem também, sempre da mais importante para a menos importante, e sendo assim possui vários tipos de ordenação, como primeiro e segundo plano. Um detalhe importante que devemos saber, é que antes dessa Unidade de Controle existir, as intruções eram executadas por ordem de chegada, ou seja, não havia uma ordem por importância. Impotante frizar que essa unidade apenas organiza as instruções, mas não as processa, não faz calcúlos, mas diz a todas as outras partes o que fazer e quando fazer.
 
+4. ULA - Unidade Lógica Aritmética - É aqui que é realizado todo o processamento, trat-sen do processador da máquina, onde é realizado todos os calculos matemáticos e operações, como somas, multiplicações, divisões, subtações e principalmente comparações, como por exemplo, maior que, menor que, igual a que. Num olhar primitivo, ela é a calculadora do sistema. Porém hoje não se define assim, pois a ULA é o próprio processador do computador, é o noss Intel i5.
 
-
-**Arquitetura von Neumann**
-
-     Foi uma arquitetura proposta por Neumann, em 1945, e se tornou o modelo conceitual da maioria dos computadores modernos. Hoje podemos dizer, sem sombra de dúvidas, que 99,99% dos computadores modernos são baseados na arquitetura Von Neumann. Só não considereraramos 100% por conta das pesquisas e avanços na computação quântica, que tem outra abordagem.
-
-     Para Neumann, os dados e instruções(programas) deveríam ocupar o mesmo espaço de memória, tratando-se de um conceito muito mais inteligente, mais simplificado. Um bom exemplo que temos hoje é o próprio hd, que é a memória permanente, onde podemos ter dados, como fotos, vídeos, documentos e também o sistema operacional. Essa abordagem foi proposta em 1945, e a partir dali tudo foi se baseando no modelo de Neumann.
-
-    Devemos saber que, antes dessa arquitetura, as máquias exigiam uma reconfiguração física para se alterar os programas, como o exemplo das máquinas que usavam cartões perfurados, ou seja, era necessário mudar fisicamente para alterar a configuração dos programas. O modelo de Neumamm trouxe mais flexibilidade, pois a partir dali os computadores, por mais primitivos que fossem, poderiam executar diferentes sistemas, diferentes intruções apenas alterando o conteúdo da memória. Nos dias de hoje, não precisamos mais alterar fisicamente a mémoria para que ela mude de função. Imaginemos uma máquina em 1945, que fizesse algum tipo de conta, uma simples soma por exemplo, se precisassemos que essa máquina fizesse uma operação de subtração, por exemplo, sería necessário mudar todo programa, precisaríamos de outro programa, ou teríamos que ter outra máquina. Ou seja, em 1945, uma máquina só somava, outra só subtraia, era como se fossem calculadoras imensas de apenas uma operação.
-
-    No inicio, computadores eram máquinas do tamanho de uma casa, imensos, com apenas 56k de memória, menos que um disket. Hoje temos em nossos bolsos um aparelho, que é 100% sistema d,e von neumann, que faz absolutamente tudo, `pesquisar sobre Eniak` , o primeiro grande computador desenvolvido em escala.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-***Privatdozent*** é um título [universitário](https://pt.wikipedia.org/wiki/Universidade "Universidade") próprio das universidades de [língua alemã](https://pt.wikipedia.org/wiki/L%C3%ADngua_alem%C3%A3 "Língua alemã") na [Europa](https://pt.wikipedia.org/wiki/Europa "Europa"). Serve para designar professores que receberam uma [habilitação](https://pt.wikipedia.org/wiki/Habilita%C3%A7%C3%A3o "Habilitação") (livre-docência) — reconhecimento formal de uma aptidão e autorização para exercê-la — mas que não receberam a cátedra de ensino ou de pesquisa. Por esta razão, o *Privatdozent* não recebe nenhuma remuneração por parte do governo. Porém, esta é uma passagem obrigatória antes de obter a cátedra.
-
-Referências: 
-
-Wiki UFPR https://wiki.inf.ufpr.br/computacao/doku.php?id=j:john_von_neumann
+5. Unidade de Saída - É onde a informação é exibida. Portanto possui um papel muito importante na arquitetura dos computadores, visto que vai muito além da exibição, essa unidade recebe os dados já processados pela CPU e os converte em formas de presentação, seja em texto, imagens na tela, som em caixas acústicas ou impressão em papel. 
